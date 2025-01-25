@@ -35,6 +35,11 @@ document.addEventListener("keydown", function (event) {
 
 function makeSound(key) {
 
+    const clearKeys = ["Delete", "Backspace", "Escape"];
+    if (displayInput.value.length >= 12 && !clearKeys.includes(key)) {
+        return;        
+    }
+
 switch (key) {
     case '9':
         displayInput.value += 9;
@@ -97,11 +102,20 @@ switch (key) {
         break;
 
     case 'Enter':
-        displayInput.value = eval(display.value);
+        try {
+            displayInput.value = eval(displayInput.value); 
+        } catch (e) {
+            displayInput.value = "Error";
+        }
         break;
 
     case 'Delete':
-        displayInput.value = '';
+    case 'Escape':
+        displayInput.value = ' ';
+        break;
+
+    case '.':
+        displayInput.value += '.';
         break;
     default: 
 }

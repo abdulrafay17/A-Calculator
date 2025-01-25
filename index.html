@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <a href="https://github.com/abdulrafay17" class="link"><i class="fab fa-github"></i> Github</a>
+        <h1 class="heading">A Calculator</h1>
+        <a href="https://github.com/abdulrafay17" class="link"><i class="fas fa-exclamation-triangle"></i> Do Not copy this code</a>
+    </header>
     <div class="container">
         <div class="calculator">
             <form>
                 <div class="display">
-                    <input type="text" name="display" readonly>
+                    <input type="tel" name="display" readonly>
                 </div>
                 <div>
-                    <input type="button" value="AC" onclick="display.value = ''" class="orange toselect">
-                    <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="orange toselect">
+                    <input type="button" value="C" onclick="display.value = ''" class="orange toselect">
+                    <input type="button" value="<" onclick="display.value = display.value.toString().slice(0,-1)" class="orange toselect">
                     <input type="button" value="." onclick="display.value += '.'" class="toselect">
                     <input type="button" value="/" onclick="display.value += '/'" class="toselect">
                 </div>
